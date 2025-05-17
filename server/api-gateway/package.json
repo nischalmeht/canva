@@ -12,7 +12,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "ws": "^8.18.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
@@ -20,6 +19,7 @@
     "google-auth-library": "^9.15.1",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "ws": "^8.18.2"
   }
 }

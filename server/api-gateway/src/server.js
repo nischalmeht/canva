@@ -4,6 +4,7 @@ const proxy = require("express-http-proxy");
 const cors = require("cors");
 const helmet = require("helmet");
 const app = express();
+const authMiddleware = require("./middleware/auth-middleware");
 const PORT = process.env.PORT || 5000;
 app.use(helmet());
 app.use(cors());
@@ -20,14 +21,12 @@ const proxyOptions = {
       });
     },
   };
-  app.use(
-    "/v1/designs",
+  app.use("/v1/designs",
     authMiddleware,
     proxy(process.env.DESIGN, {
       ...proxyOptions,
     })
   );
-
   app.use(
     "/v1/media/upload",
     authMiddleware,
